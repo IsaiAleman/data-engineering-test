@@ -1,0 +1,51 @@
+1.- What is Data Engineering?
+Data engineering is a multidisciplinary field that focuses on the design, implementation, and maintenance of distributed information systems. In general, it is important to provide the needs of information systems by managing the interaction between data by combining data sources and collaborating with others in building the data workflows.
+
+2.- What are the main responsibilities of a Data Engineer?
+Consume of data from different sources, optimize the databases for analysis, manage the presence of corruption in data doing processes like cleaning or wrangling, Development, construction, testing and maintaining data architectures like databases or processing systems to handle large amounts of data
+
+3.- Explain ETL
+The process of extracting data from multiple source systems, transforming it to suit business needs, and loading it into a target database. ETL is for Extract, Transform and Load.
+In the first phase, the data must be extracted from the source systems, then analyzing the extracted data obtaining a check and finally converting the data to a format prepared to start the transformation process.
+The transformation phase of ETL processes applies a series of business rules or functions on the extracted data to convert it into data that will be loaded
+The load phase stores the data on the target system. Depending on the requirements that are needed, this process can have a wide variety of different actions.
+
+
+
+4.- How you build a Data Pipeline?. Feel free to explain an fictional example.
+As an example, we can use APIs for data ingestion. This API is the starting point, and it could send the data to a cache like Redis Pub / Sub, which would work as a messaging system for the next step.
+Later, a processing technology, such as Kafka (streaming), will read the data from our buffer and do the analytics on this data.
+Finally, the pipeline ends with the result stored persistently in a relational database or in a data warehouse.
+
+5.- In a RDBMS Joins are your friends.  Explain Why.
+Join is needed to get data efficiently from multiple tables. It allows us to handle data structures as if they were sets, allowing us to write queries with more familiarity
+
+6.- What are the main features of a production pipeline.
+should be able to
+Ensuring the quality of the data
+Monitor the status of data processing
+Scale according to the data load
+
+
+7.- How do you monitor this data pipelines?
+There are many tools to visualize the data pipelines, but the main thing is to verify the following metrics
+Latency: The time it takes for your service to fulfill a request
+Traffic: How much demand is directed at your service
+Errors: The rate at which your service fails
+Saturation: A measure of how close to fully utilized the service’s resources are
+8.- Give us a situation where you decide to use a NoSQL database instead of a relational database. Why did you do so?
+Once I had to use a mongodb database, to store some interactions that users had with a CRM. It was about 30,000 requests per hour. I used this noSQL database precisely because it handled an immense amount of data and needed to store a data structure that could change dynamically.
+
+9.- What are the non technical soft skills that are most valuable for data engineers?
+Definitely, it is effective communication, and I believe this because the data engineer must understand which is the most appropriate structure for a certain destination. I also believe that the ability to present the information is important, because the results of the data engineer cannot be easily seen.
+
+10.- Suponse you have to design an Anomaly Detection Solution for a client in real or near real time. A platform for anomaly detection is about finding patterns of interest (outliers, exceptions, peculiarities, etc.) that deviate from expected behavior within dataset(s). Given this definition, it’s worth noting that anomaly detection is, therefore, very similar to noise removal and novelty detection. Though patterns detected with anomaly detection are actually of interest, noise detection can be slightly different because the sole purpose of detection is removing those anomalies - or noise - from data.
+Which technologies do you apply for real time ingestion and stream for an anomaly detection system? Diagram the solution in AWS or GCP Infrastructure.
+https://docs.google.com/presentation/d/1RcUhqozCJXVZ912T_sTzO0lqv1vvfOJZ43Fp8uESHSY/edit?usp=sharing
+
+
+11.- Differences between OLAP and OLTP Systems.
+OLTP has short but frequent transactions, while OLAP has long and less frequent transactions.
+The processing time for transaction OLTPs is longer compared to OLAP.
+OLAPs queries are more complex than OLTPs.
+The main operations of OLTP are insert, update and delete, while the main operation of OLAP is to extract multidimensional data for analysis.
